@@ -1,0 +1,88 @@
+$primary-color: #e43a57;
+$sec-color: white;
+
+  .log1{
+    margin-left: 10px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color:$sec-color;
+    margin-right: 0px;
+    text-align: left;
+    text-decoration: none;
+    
+    
+  }
+
+  .logo{
+    display:flex;
+    flex-direction:row;
+    margin-left: 30px;
+
+  }
+  .inline-nav {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+    cursor: default
+  }
+  .inline-nav li {
+    display: inline;
+    margin-right: 10px;
+    font-size: 30px;
+    font-weight:bold;
+    color:$sec-color;
+    
+    
+  }
+
+  .inline-nav li:hover{
+    color:black;
+    text-decoration: none;
+    cursor:pointer;
+  }
+
+  .login, .register{
+    margin-right: 50px;
+    width:100px;
+    height: 50px;
+    font-weight: bolder;
+    border-radius: 40px;
+    background-color: $sec-color;
+    color:$primary-color;
+    
+  }
+
+  .login:hover{
+    background-color: $primary-color;
+    border-color: $sec-color;
+    color:$sec-color;
+    cursor: pointer;
+  }
+
+  .register:hover{
+    background-color: $primary-color;
+    border-color: $sec-color;
+    color:$sec-color;
+    cursor: pointer;
+  }
+
+  #header {
+    margin-top: 0px;
+  }
+  header {
+    display: flex;
+    flex-direction: row;
+    background-color: $primary-color;
+    height:100px;
+    margin-top: 0px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+body{
+  margin: 0;
+}
+
+//Header
+
+
