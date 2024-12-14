@@ -154,6 +154,42 @@
 
 </section>
 
+<section class="gallery-section">
+    <center><h1 class="gallery-h1">Gallery</h1></center>
+    <div class="gallery">
+        <img src="/assets/images/Gallery1.jpg" alt="Image 1" class="thumbnail" data-large="/assets/images/Gallery1.jpg">
+        <img src="/assets/images/Gallery2.jpg" alt="Image 2" class="thumbnail" data-large="/assets/images/Gallery2.jpg">
+        <img src="/assets/images/Gallery3.jpg" alt="Image 3" class="thumbnail" data-large="/assets/images/Gallery3.jpg">
+        <img src="/assets/images/Gallery4.jpg" alt="Image 4" class="thumbnail" data-large="/assets/images/Gallery4.jpg">
+    </div>
+    <div class="modal" id="imageModal">
+        
+        <img src="" id="modalImage">
+    </div>
+
+
+<script>
+    
+    const thumbnails = document.querySelectorAll('.thumbnail');
+    const modal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+    
+    thumbnails.forEach(thumbnail => {
+        thumbnail.addEventListener('click', () => {
+            const largeImageSrc = thumbnail.getAttribute('data-large');
+            modalImage.src = largeImageSrc;
+            modal.style.display = 'flex';
+        });
+    });
+
+    modal.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+</script>
+</section>
+
 <section class="section3" id="help26">
     <div class="divider-why-help"></div>
     <div class="help-header">
