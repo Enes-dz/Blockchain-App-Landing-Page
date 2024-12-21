@@ -1,0 +1,17 @@
+[
+    {
+      "name": "Jamal Dine",
+      "review": "5/5",
+      "comment": "Excellent service! Highly recommend."
+    },
+    {
+      "name": "Ken Farm",
+      "review": "3/5",
+      "comment": "Good experience, but room for improvement."
+    },
+    {
+      "name": "Cozey Munen",
+      "review": "1/5",
+      "comment": "Very dissatisfied with the service."
+    }
+  ]
