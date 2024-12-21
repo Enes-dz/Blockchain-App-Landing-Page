@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="page_landing.css">
+    <link rel="icon" href="assets/favicon/fav.png" type="png">
+    <title>Candy Finance</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <header id="customizable">
+        <div class="logo">
+            <a class="logoimg" href="page_landing.html"><img src="assets/images/logo.png" width="30" alt="Logo Image of Candy Finance"> </a> 
+            
+            <a href="page_landing.html" class="log1"> <h1 id="customizable" class="log1">Candy Finance</h1></a>
+        
+        </div>
+        <div>
+        <ul class="inline-nav" id="header">
+            <li class="listnav" id="customizable"><a href="#home26" style="all:unset">Home</a></li>
+            <li class="listnav" id="customizable"><a href="#about26" style="all:unset">About</a></li>
+            <li class="listnav" id="customizable"><a href="#why26" style="all:unset">Why Us?</a></li>
+            <li class="listnav" id="customizable"><a href="#help26" style="all:unset">Crypto Help</a></li>
+            
+        </ul>
+        </div>
+        <div class="buttons">
+            <div class="buttons1">
+                
+                <button id="customizable" class="pricing"><a href="pricing.html" style="all:unset">Pricing</a></button>
+            </div>
+            <div class="buttons2">
+            <button id="customizable" class="login"><a href="log_in.html" style="all:unset">Log in</a></button>
+            <button id="customizable" class="register"><a href="register.html" style="all:unset">Register</a></button>
+            </div>
+        </div>
+    
+        <!--Hidden dropdown for responsivnes-->
+    
+        <div class="dropdown menu">
+            <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+              Menu
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+              <li><a class="dropdown-item" href="#home26">Home</a></li>
+              <li><a class="dropdown-item" href="#about26">About</a></li>
+              <li><a class="dropdown-item" href="#why26">Why Us?</a></li>
+              <li><a class="dropdown-item" href="#help26">Crypto Help</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="pricing.html">Pricing</a></li>
+              <li><a class="dropdown-item" href="log_in.html">Log In</a></li>
+              <li><a class="dropdown-item" href="register.html">Register</a></li>
+            </ul>
+          </div>
+        </div>
+    
+    
+        <div>
+        <select id="theme-selector">
+            <option value="light-theme">Light</option>
+            <option value="green-theme">Green</option>
+            <option value="yellow-theme">Yellow</option>
+          </select>
+        </div>
+    
+    
+        
+    </header>
+
+
+
+    <h1>About Candy Finance</h1>
+    <h3>About Us</h3>
+    <p>Welcome to Candy Finance—your sweet spot for managing and tracking all your cryptocurrency investments in one place. 
+        Designed to simplify the complex world of digital assets, our app empowers you to effortlessly oversee your crypto portfolio with tools that make monitoring your assets as easy as enjoying a piece of candy. 
+        Whether you’re a seasoned investor or just starting your crypto journey, Candy Finance is here to make managing digital wealth as delightful as possibl</p>
+    
+    <h3>Who We Are</h3>
+    <p>Candy Finance is more than just a cryptocurrency management app; it’s a community of forward-thinkers, tech enthusiasts, and financial explorers who believe in the transformative power of blockchain technology. We understand the challenges of navigating the fast-paced and ever-evolving cryptocurrency market, and we’ve built a platform that provides clarity and confidence in a rapidly changing landscape.</p>
+
+    <h3>What We Offer</h3>
+    <p>Our platform offers a comprehensive suite of features tailored to the needs of modern crypto investors:
+
+        Portfolio Management: Easily track and manage your investments across multiple wallets and exchanges.
+        
+        Real-Time Insights: Get up-to-the-minute updates on market trends, token prices, and trading volumes.
+        
+        Performance Analytics: Analyze your portfolio’s performance with intuitive graphs and detailed reports.
+        
+        Custom Alerts: Set notifications for price changes, market shifts, and portfolio milestones.
+        
+        Secure Interface: Enjoy peace of mind with state-of-the-art security measures to protect your data and assets.
+        
+        User-Friendly Design: Navigate our sleek and intuitive interface with ease, whether on desktop or mobile.</p>
+    <h3>Our Mission</h3>
+    <p>At Candy Finance, we believe everyone deserves accessible and effective tools to manage their digital wealth. Our mission is to provide a seamless, secure, and intuitive experience for crypto enthusiasts and beginners alike. With Candy Finance, you can stay on top of market trends, analyze performance, and make informed decisions—all with a touch of sweetness.</p>
+    
+    <h3>Why Choose Candy Finance?</h3>
+    <p>The cryptocurrency space can be daunting, but Candy Finance aims to make it approachable and enjoyable. Here’s why our platform stands out:
+
+        Simplicity: We’ve removed the complexity from crypto management, so you can focus on what matters most.
+        
+        Transparency: Clear and concise tools ensure you always know where your investments stand.
+        
+        Innovation: Constant updates and new features keep you ahead of the curve in a dynamic market.
+        
+        Support: Our dedicated team is here to assist you every step of the way, offering guidance and support whenever you need it.</p>
+
+       <h3>Our Vision</h3> 
+       <p>We envision a future where managing digital assets is as straightforward as managing a traditional bank account. Candy Finance strives to be the trusted companion for anyone exploring the world of cryptocurrencies, helping you achieve financial freedom and confidence in the digital economy.</p>
+
+<script>
+    const themeSelector = document.getElementById('theme-selector');
+    const body = document.body;
+
+    body.className = 'light-theme';
+    themeSelector.value = 'light-theme';
+
+    themeSelector.addEventListener('change', (event) => {
+      const selectedTheme = event.target.value;
+
+      
+      body.classList.remove('light-theme', 'green-theme', 'yellow-theme');
+
+      
+      body.classList.add(selectedTheme);
+    });
+</script>
+
+
+</body>

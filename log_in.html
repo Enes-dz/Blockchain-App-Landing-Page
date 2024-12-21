@@ -12,6 +12,10 @@
     
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 </head>
 
 <body>
@@ -45,18 +49,22 @@
               <li><a class="dropdown-item" href="register.html">Register</a></li>
             </ul>
           </div>
+
+          
+            
     
     
     </header>
 
     <section class="login_section_1">
+        
         <div class="loginform">
         
         <h1 class="h1_log">
             Log In
         </h1>
 
-        <form action="https://jsonplaceholder.typicode.com/posts" method="POST">
+        <form id="loginForm">
         <div class="loginside">
             <div  class="form-outline mb-4">
               <input type="email" id="e-mail" class="form-control" required/>
@@ -91,6 +99,41 @@
 
 
         </div>
+        
+
+        <script>
+            toastr.options = {
+                "closeButton": true,
+                "progressBar": true,
+                "positionClass": "toast-top-right",
+                "timeOut": "5000"
+            };
+        
+            $(document).ready(function() {
+                $('#loginForm').submit(function(event) {
+                    event.preventDefault(); 
+        
+                    var formData = {
+                        email: $('#e-mail').val(),
+                        password: $('#pass').val(),
+                        rememberMe: $('#rememberme').is(':checked')
+                    };
+        
+                    $.ajax({
+                        type: 'POST',
+                        url: 'https://jsonplaceholder.typicode.com/posts', 
+                        data: formData,
+                        success: function(response) {
+                            toastr.success('Your data has been saved successfully!');
+                            $('#loginForm')[0].reset();
+                        },
+                        error: function(xhr, status, error) {
+                            toastr.error('An error occurred while saving the data.');
+                        }
+                    });
+                });
+            });
+        </script>
     </section>
 
 
