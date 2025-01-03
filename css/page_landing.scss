@@ -3,18 +3,50 @@ $sec-color: white;
 //header
 body {
   font-family: 'Sour Gummy', sans-serif !important;
+  background-color: $primary-color;
+}
+
+body.light-theme {
+  background-color: white;
+  color: $primary-color;
+}
+body.green-theme {
+  background-color: #277e62;
+  color: #e0e0e0;
+}
+body.yellow-theme {
+  background-color: #fbf3c5;
+  color: black;
+}
+
+
+body.light-theme #customizable {
+  background-color: white;
+  color: $primary-color;
+}
+body.green-theme #customizable {
+  background-color: #277e62 !important;
+  color: #e0e0e0;
+}
+body.yellow-theme #customizable {
+  background-color: #fbf3c5;
+  color: black;
 }
 
   .log1{
     margin-left: 10px;
     margin-top: 0px;
     margin-bottom: 0px;
-    color:$sec-color;
+    color:$sec-color ;
     margin-right: 0px;
     text-align: left;
     text-decoration: none;
     
     
+  }
+
+  .h1_log{
+    color: black !important;
   }
 
   .logo{
@@ -46,7 +78,7 @@ body {
     cursor:pointer;
   }
 
-  .login, .register, .pricing{
+  .login, .register, .pricing, .home{
     
     width:100px;
     height: 40px;
@@ -64,7 +96,7 @@ body {
     
   }
 
-  .login:hover, .register:hover, .pricing:hover{
+  .login:hover, .register:hover, .pricing:hover, .home:hover{
     background-color: $primary-color;
     border-color: $sec-color;
     color:$sec-color;
@@ -178,7 +210,7 @@ body{
 .section1{
   display:flex;
   flex-direction:row;
-  background-image: url('assets/images/sec_1_bg.png'); 
+  background-image: url('../assets/images/sec_1_bg.png'); 
   background-size: cover;         
   background-position: center;     
   background-repeat: no-repeat;    
@@ -208,6 +240,10 @@ body{
 
 .phoneimg{
   padding:2%;
+}
+
+.header-buttons-h {
+  margin-left: 2px;
 }
 
 
@@ -377,7 +413,7 @@ article{
 
 .why-card{
   margin: 1%;
-  background-color: $primary-color !important;
+  background-color: $primary-color!important;
 }
 
 .why-header{
@@ -570,15 +606,20 @@ iframe{
 //login
 .login_section_1{
   display:flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   
+}
+
+.succesmess{
+  margin-top: 20px;
 }
 
 .loginform{
   width:30vw;
   height:70vh;
-  margin-top: 6%;
-  margin-bottom: 6%;
+  margin-top: 3%;
+  margin-bottom: 3%;
   padding:1%;
   border: 2px solid black;
   border-radius: 10%;
@@ -828,3 +869,283 @@ th, td{
 
 }
 
+.gallery {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px;
+}
+
+.gallery-h1{
+  font-size:80 vw;
+  color: #e43a57;
+}
+
+.thumbnail {
+  flex: 1 1 calc(25% - 10px); 
+  max-width: calc(25% - 10px);
+
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  transition: transform 0.2s, border-color 0.2s;
+}
+@media (max-width: 768px) {
+  .thumbnail {
+    flex: 1 1 calc(50% - 10px); 
+    max-width: calc(50% - 10px);
+  }
+}
+
+@media (max-width: 1024px) {
+  .thumbnail {
+    flex: 1 1 100%; 
+    max-width: 100%;
+  }
+}
+
+.thumbnail:hover {
+  transform: scale(1.05);
+  border-color: #888;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal img {
+  max-width: 90%;
+  max-height: 90%;
+  border: 5px solid white;
+  border-radius: 10px;
+  box-shadow: 0 0 20px black;
+}
+
+.modal .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+.faq-heading{
+  font-size: 5vw ;
+  color: $primary-color;
+  padding-left: 10vw;
+}
+
+.content-faq {
+  display: none;
+  margin-top: 10px;
+  display:none;
+}
+.toggle-btn {
+  cursor: pointer;
+  color: black;
+  text-decoration: underline;
+  background: none;
+  border: 1px black;
+  font-size: 2vw;
+  padding-left: 10vw;
+}
+
+.content-faq{
+    color:#e43a57;
+    font-size: 1vw;
+    padding-left: 10vw;
+    padding-right: 10vw;
+  }
+
+@media (max-width: 768px){
+  .faq-heading{
+    font-size:12vw;
+  }
+  .toggle-btn{
+    font-size: 3vw;
+  }
+  .content-faq{
+    font-size: 2vw;
+  }
+
+}
+
+.body {
+  
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+}
+
+// Additional FAQ2
+
+.accordion {
+
+  
+  max-width: 900px;
+  margin: 0 ;
+}
+
+.accordion-item {
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.accordion-header {
+  width: 100%;
+  padding: 10px;
+  text-align: left;
+  background-color: #f1f1f1;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5vw;
+  
+}
+
+.accordion-content {
+  padding: 10px;
+  background-color: #e9e9e9;
+  display: none;
+  border-top: 1px solid #ccc;
+}
+
+
+
+.accordion-header.active {
+  background-color: #ddd;
+}
+
+.Faq2{
+  margin-top: 40px;
+  margin-left: 10vw;
+}
+
+.Faq2-h{
+  font-size: 5vw;
+}
+
+
+.password-strength {
+  font-size: 0.875rem;
+}
+
+
+.reviews-box{
+  display:flex;
+  flex-direction: row;
+}
+
+.review{
+  border: 1px solid black;
+  padding: 10px;
+  margin: 10px;
+}
+
+.reviews{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+
+}
+
+.reviews-h1{
+  font-size: 5vw;
+}
+
+.about-button{
+  margin-bottom: 20px;
+}
+
+
+.crypto-table{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top:100px;
+}
+
+.crypto-table-h1{
+  font-size: 4vw;
+}
+
+.cell-crypto{
+  border: 1px solid black;
+}
+
+.cell-row{
+  border: 1px solid black;
+}
+
+.success{
+  font-size: 2vw;
+  margin: 20px;
+  
+}
+.bitcoin-price{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+.live-price {
+  
+  font-size: 4vw;
+  font-weight: bold;
+  
+  margin: 20px 0;
+}
+.error {
+  font-size: 4vw;
+  font-weight: bold;
+}
+
+.data-err{
+  font-size: 1vw;
+  font-weight: lighter;
+}
+
+
+.high-head-button{
+  background-color: blue !important;
+  color:white !important;
+  border: 2px black solid !important;
+}
+
+
+.user-not-exist{
+  display:none;
+  margin-top: 20px;
+  padding: 8px;
+  border: 3px black solid;
+  border-radius: 20px;
+  
+}
+
+#welcome-Logged-user{
+  display: none;
+  font-weight: bolder;
+  font-size: larger;
+}
+
+.logout{
+  border-radius: 10px;
+  margin-left: 10px;
+}
+
+.must-log-in{
+  display:none;
+  margin-top: 20px;
+  padding: 8px;
+  border: 3px black solid;
+  border-radius: 20px;
+}

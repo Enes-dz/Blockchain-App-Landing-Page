@@ -1,0 +1,340 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <link rel="stylesheet" href="assets/spapp/css/spapp.css">
+
+
+  <script src="assets/spapp/js/jquery.min.js"></script>
+  <script src="assets/spapp/js/jquery.spapp.min.js"></script>
+  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/page_landing.css">
+    <link rel="icon" href="assets/favicon/fav.png" type="png">
+    <title>Candy Finance</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+
+    
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+
+
+</head>
+<body id="body">
+  <header id="customizable">
+    <div class="logo">
+        <a class="logoimg" href="#home"><img src="assets/images/logo.png" width="30" alt="Logo Image of Candy Finance"> </a> 
+        
+        <a href="#home" class="log1"> <h1 id="customizable" class="log1">Candy Finance</h1></a>
+    
+    </div>
+    
+    <div class="buttons">
+      <button id="customizable" data-hash="home" class="home header-buttons-h header-buttons-h-home"><a href="#home" style="all:unset">Home</a></button>
+      <button id="customizable" data-hash="about" class="home header-buttons-h header-buttons-h-about"><a href="#about" style="all:unset">About Us</a></button>   
+        <button id="customizable" data-hash="pricing" class="pricing header-buttons-h header-buttons-h-pricing"><a href="#pricing" style="all:unset">Pricing</a></button>
+        
+        <button id="customizable" data-hash="log_in" class="login header-buttons-h header-buttons-h-log_in"><a href="#log_in" style="all:unset">Log in</a></button>
+        <button id="customizable" data-hash="register" class="register header-buttons-h header-buttons-h-register"><a href="#register" style="all:unset">Register</a></button>
+        
+        
+    </div>
+
+    <div id="welcome-Logged-user"></div>
+
+    <!--Hidden dropdown for responsivnes-->
+
+    <div class="dropdown menu">
+        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+          Menu
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+          
+          <li><hr class="dropdown-divider"></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="#home">Home</a></li>
+          <li><a class="dropdown-item" href="#about">About Us</a></li>
+          <li><a class="dropdown-item" href="#pricing">Pricing</a></li>
+          <li><a class="dropdown-item" href="#log_in">Log In</a></li>
+          <li><a class="dropdown-item" href="#register">Register</a></li>
+        </ul>
+      </div>
+    </div>
+
+
+    <div>
+    <select id="theme-selector">
+        <option value="light-theme">Light</option>
+        <option value="green-theme">Green</option>
+        <option value="yellow-theme">Yellow</option>
+      </select>
+    </div>
+
+
+    
+</header>
+
+<main id="spapp" role="main">
+  <section id="log_in" data-load="log_in.html">
+      <h1>Page1</h1>
+  </section>
+  <section id="pricing" data-load="pricing.html">
+      <h1>Page2</h1>
+  </section>
+  <section id="register" data-load="register.html">
+      <h1>Page3</h1>
+  </section>
+  <section id="home" data-load="home.html">
+    <h1>Page4</h1>
+</section>
+<section id="about" data-load="about.html">
+  <h1>Page4</h1>
+</section>
+</main>
+
+
+
+<footer class="footer" id="customizable">
+
+    <div class="logo logo1">
+        <img class="cand" src="assets/images/logo.png" width="60" height="100" alt="Logo Image of Candy Finance">
+    </div>
+
+
+    <div class="course">
+        <h1 class="h1-footer-1">
+            Foundations Of Web Development
+        </h1>
+
+
+    </div>
+
+    <div class="enes">
+        <h1 class="h1-footer-1">
+            Enes Dzihanovic
+        </h1>
+
+    </div>
+    
+</footer>
+
+
+<script>
+    var app = $.spapp({
+      defaultView: "#log_in",
+      templateteDir: "../views/"
+    });
+
+    app.run();
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous""></script>
+<!--Script for Theme Switcher-->
+<script>
+    const themeSelector = document.getElementById('theme-selector');
+    const body = document.body;
+
+    body.className = 'light-theme';
+    themeSelector.value = 'light-theme';
+
+    themeSelector.addEventListener('change', (event) => {
+      const selectedTheme = event.target.value;
+
+      
+      body.classList.remove('light-theme', 'green-theme', 'yellow-theme');
+
+      
+      body.classList.add(selectedTheme);
+    });
+</script>
+
+
+<!--Script for Highlighting Active Button Page -->
+<script>
+
+  document.addEventListener('DOMContentLoaded', () =>{
+  const changeButton = () =>{
+    const currentPage = window.location.hash.substring(1);
+    console.log(currentPage);
+    
+    
+    const buttons = document.querySelectorAll('.header-buttons-h');
+
+    buttons.forEach(button=>{
+      console.log(button.getAttribute('data-hash'));
+      if(button.getAttribute('data-hash')=== currentPage){
+        button.classList.add('high-head-button');
+        
+        
+      }else {
+        button.classList.remove('high-head-button');
+      }
+    })
+  }
+    changeButton();
+
+    window.addEventListener('hashchange', changeButton);
+
+    
+  })
+
+  
+  
+</script>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+
+<script>
+  
+  //Script for LogIn Validation and State Management
+  
+  let userState = false;
+  localStorage.setItem('stateLogged', userState)
+
+  function userLogOut(){
+    const loginButtonNo = document.getElementsByClassName('header-buttons-h-log_in');
+    const registerButtonNo = document.getElementsByClassName('header-buttons-h-register');
+    loginButtonNo[0].style.display = 'block';
+    registerButtonNo[0].style.display = 'block';
+    const welcomeUser = document.getElementById('welcome-Logged-user');
+    welcomeUser.style.display = 'none';
+
+  }
+  
+
+  function userLogIn(){
+    if(userLogged = localStorage.getItem('user')) {
+      let userLogged = localStorage.getItem('user');
+      const loginButtonNo = document.getElementsByClassName('header-buttons-h-log_in');
+      const registerButtonNo = document.getElementsByClassName('header-buttons-h-register');
+      console.log('test');
+      loginButtonNo[0].style.display = 'none';
+      registerButtonNo[0].style.display = 'none';
+
+      const welcomeUser = document.getElementById('welcome-Logged-user');
+      welcomeUser.innerHTML = `
+      <h2>Hello, ${userLogged}</h2>
+      <button id = 'logout' class="logout">Log Out</button>`;
+      welcomeUser.style.display = 'flex';
+      logoutButton = document.getElementById('logout');
+      logoutButton.addEventListener('click', ()=>{
+        localStorage.clear();
+        userState = false;
+        localStorage.setItem('stateLogged', userState)
+        window.location.href = '#log_in';
+        userLogOut();
+      });
+    };
+    
+  };
+  
+  
+  function attachLoginEventListener() {
+    const loginButton = document.getElementById('submit-butt-form');
+    console.log(loginButton);
+    if (loginButton) {
+        loginButton.addEventListener('click', (event) => {
+            const emailInput = document.getElementById('e-mail-log').value;
+            const passwordInput = document.getElementById('pass-log').value;
+
+            if (emailInput && passwordInput) {
+                console.log('button clicked');
+                console.log(emailInput, passwordInput);
+
+                
+
+                async function fetchData() {
+                    try {
+                        const response = await fetch('./data/userInformation.json');
+                        if (!response.ok) {
+                            throw new Error('Not good response');
+                        }
+                        const usersInfo = await response.json();
+                        console.log('Fetched users data:', usersInfo);
+                        let userExist = false;
+
+                        usersInfo.forEach(user => {
+                            if (user['email'] === emailInput && user['password'] === passwordInput) {
+                                console.log('User Exists');
+                                userExist = true;
+                                localStorage.clear();
+                                localStorage.setItem('user', user['username']);
+                                localStorage.setItem('email', user['email']);
+                                localStorage.setItem('password', user['password']);
+                                userState = true;
+                                localStorage.setItem('stateLogged', userState)
+                                window.location.href = '#home';
+                                userLogIn();
+                            }
+                        });
+
+                        if (!userExist) {
+                            const UserNotExist = document.getElementById("user-not-exist-id");
+                            UserNotExist.style.display = 'block';
+                            setTimeout(() => {
+                                UserNotExist.style.display = 'none';
+                            }, 5000);
+                        }
+                    } catch (error) {
+                        console.error('There was a problem with the fetch operation:', error);
+                    }
+                }
+
+                fetchData();
+            } else {
+                event.preventDefault();
+                console.log('Please fill in both the email and password');
+            }
+        });
+    }
+}
+
+// Run this function after each hash change or initial page load
+function onHashChange() {
+  if(localStorage.getItem('stateLogged') === 'false'){
+
+    window.location.href = '#log_in';
+    const mustLOG = document.getElementById("must-log-in");
+    mustLOG.style.display = 'block';
+      setTimeout(() => {
+        mustLOG.style.display = 'none'
+      }, 6000);
+  };
+    if (window.location.hash === '#log_in') {
+        console.log('Navigating to login page');
+        attachLoginEventListener();
+    } else {
+        console.log('Not on login page');
+    }
+}
+
+// Run on initial page load
+window.onload = function() {
+  
+    onHashChange();
+};
+
+// Run on hash change (when navigating between pages)
+window.addEventListener('hashchange', onHashChange);
+    userLogIn();
+
+
+</script>
+
+</body>
+</html>
