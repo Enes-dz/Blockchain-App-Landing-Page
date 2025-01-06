@@ -1,0 +1,5 @@
+[
+    { "id": 1, "globalRank": 1, "name": "Bitcoin", "marketCap": "$1,9270,000,000,000" },
+    { "id": 2, "globalRank": 2, "name": "Ethereum", "marketCap": "$404,143,000,000" },
+    { "id": 3, "globalRank": 6, "name": "Solana", "marketCap": "$86,801,000,000" }
+]
